@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="Hymn.css" type="text/css">
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="\Users\user\OneDrive\Desktop\Act 1 - PUP Hymn\pup-logo.ico">
+    <title>PUP Hymn</title>
+    <img src="pupstrip.jpg" alt="Header" class="imagecenter"/>
+</head>
+<table class="table1">
+    <tbody>
+      <tr>
+        <td>
+            <h3>PUP Hymn</h3>
+            <table class="table2">
+                <tbody>
+                    <tr>
+                        <td>
+                            <marquee id="marq" behavior="scroll" scrollamount="0" width="500px" height="300px" direction="up">
+                                [Instrument]
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                <br></br>
+                                Sintang Paaralan<br></br>
+                                Tanglaw ka ng bayan<br></br>
+                                Pandayan ng isip ng kabataan<br></br>
+                                <br></br>
+                                Kami ay dumating nang salat sa yaman<br></br>
+                                Hanap na dunong ay iyong alay<br></br>
+                                <br></br>
+                                <br></br>
+                                Ang layunin mong makatao<br></br>
+                                <br></br>
+                                Dinarangal ang Pilipino<br></br>
+                                <br></br>
+                                Ang iyong aral, diwa, adhikang taglay<br></br>
+                                PUP, aming gabay<br></br>
+                                Paaralang dakila<br></br>
+                                <br></br>
+                                PUP, pinagpala<br></br>
+                                <br></br>
+                                Gagamitin ang karunungan<br></br>
+                                <br></br>
+                                Mula sa iyo, para sa bayan<br></br>
+                                <br></br>
+                                Ang iyong aral, diwa, adhikang taglay<br></br>
+                                <br></br>
+                                PUP, aming gabay<br></br>
+                                Paaralang dakila<br></br>
+                                <br></br>
+                                PUP, pinagpala<br></br>
+                            </marquee>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+             <audio id="myAudio">
+                <source src="Imno ng PUP (The PUP Hymn).mp3" type="audio/mp3">
+            </audio>
+            <input type="button" id="play" value="▶️">
+            <input type="button" id="pause" value="⏸️">
+            <input type="button" id="stop" value="⏹️">
+            <input type="button" id="Backward" value="⏪">
+            <input type="button" id="Forward" value="⏩">
+
+            <script>
+                // retrieve id's from html
+                var marq = document.getElementById("marq");
+                var myAudio = document.getElementById("myAudio");
+                var play = document.getElementById("play");
+                var pause = document.getElementById("pause");
+                var refresh = document.getElementById("stop");
+                var forward = document.getElementById("Forward");
+                var backward = document.getElementById("Backward");
+  
+                // refresh page
+                refresh.onclick = refreshPage;
+                function refreshPage(){
+                    window.location.reload();
+                }
+
+                let audio = myAudio;
+                marq.setAttribute("scrollamount", 0);
+
+                // to disable and enable buttons
+                audio.addEventListener("playing", function(){
+                    document.getElementById("play").disabled = true;
+                    document.getElementById("pause").disabled = false;
+                });
+                audio.addEventListener("pause", function(){
+                    document.getElementById("play").disabled = false;
+                    document.getElementById("pause").disabled = true;
+                    });
+
+                // play and pause marquee and audio
+                pause.onclick = pausemarq;
+                play.onclick = startmarq;
+
+                function pausemarq()
+                {
+                    audio.pause();
+                    marq.stop();
+                }
+                function startmarq()
+                {
+                    audio.play();
+                    marq.setAttribute("scrollamount", 1);
+                    marq.start();
+                }
+
+                // refresh marquee after music ended
+                audio.addEventListener('ended', function(){
+                    marq.setAttribute("scrollamount", 0);
+                    marq.refresh();
+                });
+
+                forward.addEventListener("click", function fastForward() {
+                    audio.currentTime += 5;
+                    marq.scrollTop += marq.offsetHeight / 4;
+                });
+
+                backward.addEventListener("click", function rewind() {
+                    audio.currentTime -= 5;
+                    marq.scrollTop -= marq.offsetHeight / 4;
+                });
+
+            </script>
+        </td>
+      </tr>
+    <tr>
+        <td>
+            <p>Copyright © 2017 Polytechnic University of the Philippines</p>
+        </td>
+    </tr>
+    </tbody>
+  </table>
+</html>

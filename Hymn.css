@@ -1,0 +1,75 @@
+
+body {
+  background-image: linear-gradient(to bottom right,black, red);
+  text-align: center;
+}
+
+h3 {
+  color: red;
+  font: bold;
+  font-size: large;
+  border: #000000;
+}
+
+.imagecenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    height: 190px;
+}
+
+.table1 {
+    margin-right: auto;
+    margin-left: auto;
+    width: 75%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    color: #000000;
+  }
+  
+
+  .table1 td {
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    padding: 5px;
+  }
+
+  
+  .table2 {
+    margin-right: auto;
+    margin-left: auto;
+    width: 50%;
+    background-color: #FFFFFF;
+    border-collapse: collapse;
+    border-width: 2px;
+    border-color: #000000;
+    border-style: solid;
+    color: #000000;
+  }
+
+  marquee {
+    text-align: center;
+  }
+
+  #play, #pause, #stop, #Forward, #Backward {
+    /* font-family: 'trebuchet ms';
+    color: #FFFFFF;
+    font-size: 18px;
+    text-shadow: 1px 2px 0px #080808;*/
+    box-shadow: 1px 1px 1px #F91616;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid #FFFFFF;
+    background: #EE1111;
+    background: linear-gradient(to top, #EE1111, #302D2D);
+  }
+  #play:hover, #pause:hover, #stop:hover, #Forward:hover, #Backward:hover {
+    color: #14396A;
+    background: #468CCF;
+    background: linear-gradient(to top, #468CCF, #63B8EE);
+  }
